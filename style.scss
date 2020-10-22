@@ -1,0 +1,345 @@
+body {
+    box-sizing: border-box;
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+header {
+    position: fixed;
+    width: 100%;
+}
+.container-head {
+    margin-left: 50px;
+    margin-top: 50px;
+    position: relative;
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 150px;
+}
+.menu-block {
+    display: flex;
+    width: fit-content;
+    z-index: 100;
+    position: absolute;
+}
+.logo {
+    display: flex;
+    width: 50px;
+    margin-right: 10px;
+    img {
+        width: auto;
+        height: 50px;
+    }
+}
+#menu {
+    display: none;
+    align-items: center;
+}
+.c-hamburger {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    font-size: 0px;
+    border: none;
+    cursor: pointer;
+    .line {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 30px;
+        height: 2px;
+        border: 1px solid black;
+        background-color: black;
+    }
+    .line.one {
+        margin-bottom: 8px;
+    }
+    .line.three {
+        margin-top: 8px;
+    }
+}
+.c-hamburger:focus {
+    outline: none;
+}
+.c-hamburger-line {
+    background: transparent;
+    transition-delay: 0.3s;
+    transition-duration: 0.3s;
+}
+.c-hamburger-line span {
+    transition: background 0s 0.3s;
+}
+.c-hamburger-line .line.one, .c-hamburger-line .line.three{
+    transition-duration: 0.3s, 0.3s ;
+    transition-delay: 0.3s, 0s;
+}
+.c-hamburger-line .line.one {
+    transition-property: margin-bottom, transform;
+}
+.c-hamburger-line .line.three{
+    transition-property: margin-top, transform;
+}
+.c-hamburger-line.is-active {
+    transition-delay: 0.3s;
+    transition-duration: 0.3s;
+}
+.c-hamburger-line.is-active .line.two {
+    background: none;
+    border: 0px
+}
+.c-hamburger-line.is-active .line.one {
+    margin-bottom: -2px;
+    transform: rotate(-45deg);
+}
+.c-hamburger-line.is-active .line.three {
+    margin-top: -4px;
+    transform: rotate(45deg);
+}
+.c-hamburger-line.is-active .line.three, .c-hamburger-line.is-active .line.one {
+    transition-delay: 0s, 0.3s;
+} 
+
+
+.carousel {
+    position: relative;
+}
+
+
+.gallery {
+    width: auto;
+    overflow: hidden;
+}
+.gallery ul {
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    overflow: scroll;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: margin-left 250ms;
+
+}
+
+.gallery li {
+display: inline-block;
+list-style: none;
+}
+
+@media (max-width: 767px) {
+    .gallery ul {
+        width: 330px;
+    }  
+}
+
+
+
+
+.company_fix {
+    display: none;
+    width: fit-content;
+    z-index: 101;
+    position: absolute;
+    top: 60px;
+    background-color: white;
+    margin-bottom: 50px;
+    p {
+        margin-left: 10px;
+    }
+    .company-fix__title {
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 52px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin: 0 10px;
+        color: #1C2A5B;
+    }
+}
+.mobile-menu {
+    display: none;
+    width: 100%;
+    padding-top: 160px;
+    background: rgba(0,0,0,0.07);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(30px);
+    -moz-backdrop-filter: blur(30px);
+    position: relative;
+    height: 2000px;
+    bottom: 50px;
+    animation: mymove 0.2s forwards;
+    opacity: 0;
+    z-index: 10;
+}
+@keyframes mymove {
+    100% {opacity: 1;}
+}
+@-webkit-keyframes mymove {
+    100% {opacity: 1;}
+}
+.mobile-menu__content {
+    margin-left: 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+        .link {
+            font-size: 27px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 37px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: #0D1B4C;
+            border: 9px solid transparent;
+            width: fit-content;
+            cursor: pointer;
+
+        }
+        .link:after {
+            background-color: #F3C011;
+            display: block;
+            content: "";
+            height: 2px;
+            width: 0;
+            transition: 0.4s;
+        }
+        .link:hover::after {
+            width: 100%;
+        }
+}
+
+.company-main {
+    display: flex;
+    flex-wrap: wrap;
+    .company-main__title {
+        width: 12%;
+        font-family: Bebas Neue;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 29px;
+        letter-spacing: 0em;
+        text-align: left;
+        text-transform: uppercase;
+        margin: 0 auto;
+    }
+    .company-main__block {
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+        margin: 0 auto;
+        justify-content: space-between;
+        padding-top: 30px;
+        
+        .company {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid #F3C011;
+            box-sizing: border-box;
+            border-radius: 25px;
+            width: 255px;
+            height: 406px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            .company_content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 90%;
+                .company-img {
+                    height: 110px;
+                    display: flex;
+                    color: #F3C011;
+                }
+                .company__name {
+                    align-self: flex-start;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 27px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    margin-bottom: 10px;
+
+                }
+                .company__description {
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 22px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                }
+                .company__description::before {
+                    display: block;
+                    position: relative;
+                    bottom: 10px;
+                    content: "";
+                    width: 100%;
+                    background-color: #F3C011;
+                    height: 1px;
+                    z-index: -1;
+                }
+            }
+        }
+        .company.two {
+            border: solid #5A75D7;
+            .company-img {
+                color: #5A75D7
+            }    
+            .company__description::before {
+                background-color: #5A75D7;
+        
+            }
+        }
+        .company.three {
+            border: solid #FF796C;
+            .company-img {
+                color:#FF796C;
+            }    
+            .company__description::before {
+                background-color: #FF796C;
+        
+            }
+        }
+        .company:hover {
+            background-color: #F3C011;
+            transition-duration: 0.8s;
+            transition-delay: 0.1s;
+            .company-img, .company__name, .company__description {
+                color: white;
+                transition-duration: 0.8s;
+                transition-delay: 0.1s;
+            }
+            .company__description::before {
+                background-color: white;
+                z-index: 1;
+                transition-duration: 0.8s;
+                transition-delay: 0.1s;
+            }
+        }
+        .company.two:hover {
+            background-color: #5A75D7;
+        }
+        .company.three:hover {
+            background-color:  #FF796C;
+        }           
+    }
+}
